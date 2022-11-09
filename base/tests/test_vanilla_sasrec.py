@@ -2,14 +2,14 @@ import unittest
 
 class TestVanillaSasrec(unittest.TestCase):
     def test_vanilla_sasrec(self):
-        from aprec.datasets.movielens20m import get_movielens20m_actions, get_movies_catalog
-        from aprec.losses.bce import BCELoss
-        from aprec.recommenders.dnn_sequential_recommender.dnn_sequential_recommender import DNNSequentialRecommender
-        from aprec.recommenders.dnn_sequential_recommender.models.sasrec.sasrec import SASRec
-        from aprec.recommenders.dnn_sequential_recommender.target_builders.negative_per_positive_target import NegativePerPositiveTargetBuilder
-        from aprec.recommenders.dnn_sequential_recommender.targetsplitters.shifted_sequence_splitter import ShiftedSequenceSplitter
-        from aprec.recommenders.filter_seen_recommender import FilterSeenRecommender
-        from aprec.utils.generator_limit import generator_limit
+        from base.datasets.movielens20m import get_movielens20m_actions, get_movies_catalog
+        from base.losses.bce import BCELoss
+        from base.recommenders.dnn_sequential_recommender.dnn_sequential_recommender import DNNSequentialRecommender
+        from base.recommenders.dnn_sequential_recommender.models.sasrec.sasrec import SASRec
+        from base.recommenders.dnn_sequential_recommender.target_builders.negative_per_positive_target import NegativePerPositiveTargetBuilder
+        from base.recommenders.dnn_sequential_recommender.targetsplitters.shifted_sequence_splitter import ShiftedSequenceSplitter
+        from base.recommenders.filter_seen_recommender import FilterSeenRecommender
+        from base.utils.generator_limit import generator_limit
 
         USER_ID = '120'
         val_users = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']

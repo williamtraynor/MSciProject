@@ -2,8 +2,8 @@ import unittest
 
 class TestPairwiseCosSim(unittest.TestCase):
     def test_pairwise_cos_sim(self):
-        from aprec.evaluation.metrics.pairwise_cos_sim import PairwiseCosSim
-        from aprec.api.action import Action
+        from base.evaluation.metrics.pairwise_cos_sim import PairwiseCosSim
+        from base.api.action import Action
         actions = [Action(user_id=1, item_id=1, timestamp=1),
                    Action(user_id=1, item_id=3, timestamp=2),
 

@@ -1,4 +1,4 @@
-from aprec.losses.loss import Loss
+from base.losses.loss import Loss
 import tensorflow as tf
 from tensorflow.keras.losses import BinaryCrossentropy
 import tensorflow.keras.backend as K

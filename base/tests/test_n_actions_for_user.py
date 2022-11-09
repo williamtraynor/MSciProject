@@ -21,8 +21,8 @@ def sorted_actions_str(actions):
 
 class TestNActionsForUser(unittest.TestCase):
     def test_n_actions_for_user(self):
-        from aprec.tests.generate_actions import generate_actions
-        from aprec.evaluation.n_actions_for_user import n_actions_for_user
+        from base.tests.generate_actions import generate_actions
+        from base.evaluation.n_actions_for_user import n_actions_for_user
 
 
         actions = generate_actions(10)

@@ -1,5 +1,5 @@
-from aprec.api.items_ranking_request import ItemsRankingRequest
-from aprec.recommenders.recommender import Recommender
+from base.api.items_ranking_request import ItemsRankingRequest
+from base.recommenders.recommender import Recommender
 from collections import defaultdict
 
 INF = float('inf')

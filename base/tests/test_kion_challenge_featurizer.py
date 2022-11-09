@@ -1,8 +1,8 @@
 import unittest
-from aprec.recommenders.kion_challenge_featurizer import KionChallengeFeaturizer
-from aprec.datasets.mts_kion import get_users
-from aprec.datasets.mts_kion import get_items
-from aprec.datasets.mts_kion import get_mts_kion_dataset
+from base.recommenders.kion_challenge_featurizer import KionChallengeFeaturizer
+from base.datasets.mts_kion import get_users
+from base.datasets.mts_kion import get_items
+from base.datasets.mts_kion import get_mts_kion_dataset
 
 class TestKionChallengeFeaturizer(unittest.TestCase):
     def test_kion_challenge_featurizer(self):

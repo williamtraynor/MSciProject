@@ -2,10 +2,10 @@ import numpy as np
 from tensorflow.keras import Model
 import tensorflow as tf
 
-from aprec.recommenders.dnn_sequential_recommender.models.sequential_recsys_model import SequentialRecsysModel
+from base.recommenders.dnn_sequential_recommender.models.sequential_recsys_model import SequentialRecsysModel
 
-from aprec.recommenders.dnn_sequential_recommender.transformers.models.bert.configuration_bert import BertConfig
-from aprec.recommenders.dnn_sequential_recommender.transformers.models.bert.modeling_tf_bert import TFBertForMaskedLM
+from base.recommenders.dnn_sequential_recommender.transformers.models.bert.configuration_bert import BertConfig
+from base.recommenders.dnn_sequential_recommender.transformers.models.bert.modeling_tf_bert import TFBertForMaskedLM
 
 class BERT4Rec(SequentialRecsysModel):
     def __init__(self, output_layer_activation = 'linear',
@@ -93,6 +93,30 @@ class BERT4RecModel(Model):
         
         return list(labels)
 
+    def get_one_hot_labels(self, skips, labels):
+
+        # This function will obtain labels in a one hot format for 3 labells
+        # pad, skipped and played.
+
+        skips = np.expand_dims(np.array(skips), 2) # e.g. reshape form (5,100) to (5,100,1)
+        labels = np.expand_dims(np.array(labels), 2)
+
+        # include pad songs in the skip labels
+        skips[labels == -100] = -100
+
+        pad_label = skips == -100
+        skip_label = skips == 1
+        play_label = skips == 0
+
+        one_hot_labels = np.concatenate([pad_label.T, skip_label.T, play_label.T]).T.astype(int)
+
+        print('Normal Labels: ',labels)
+
+        print('OneHotLabels: ', one_hot_labels.shape)
+        print(one_hot_labels[1,:,:])
+
+        return tf.convert_to_tensor(one_hot_labels)
+
 
     # BERT4Rec Call Function
     def call(self, inputs, **kwargs):
@@ -108,9 +132,10 @@ class BERT4RecModel(Model):
         #      also played and pad items given same value
         # 0 => played songs given value 0 
         #      also played and pad items given same value
-        one_hot_labels = (np.array(skips) == 0).astype(int)
+        #one_hot_contrastive_labels = self.get_one_hot_labels(skips, labels)
+        #one_hot_labels = tf.Tensor((np.array(skips) == 0).astype(int))
 
-        result = self.bert(input_ids=sequences, labels=one_hot_labels, position_ids=positions)          #, inputs_embeds=inputs_embeds) #,input_ids=sequences)
+        result = self.bert(input_ids=sequences, labels=labels, position_ids=positions,)          #, inputs_embeds=inputs_embeds) #,input_ids=sequences)
 
         return result.loss
 

@@ -1,23 +1,23 @@
-from aprec.evaluation.samplers.pop_sampler import PopTargetItemsSampler
-from aprec.losses.mean_ypred_ploss import MeanPredLoss
-from aprec.recommenders.dnn_sequential_recommender.history_vectorizers.add_mask_history_vectorizer import AddMaskHistoryVectorizer
-from aprec.recommenders.dnn_sequential_recommender.models.deberta4rec.deberta4rec import Deberta4Rec
-from aprec.recommenders.dnn_sequential_recommender.target_builders.items_masking_target_builder import ItemsMaskingTargetsBuilder
-from aprec.recommenders.dnn_sequential_recommender.targetsplitters.items_masking import ItemsMasking
-from aprec.evaluation.split_actions import LeaveOneOut
-from aprec.recommenders.top_recommender import TopRecommender
-from aprec.recommenders.svd import SvdRecommender
-from aprec.recommenders.dnn_sequential_recommender.dnn_sequential_recommender import DNNSequentialRecommender
-from aprec.recommenders.lightfm import LightFMRecommender
+from base.evaluation.samplers.pop_sampler import PopTargetItemsSampler
+from base.losses.mean_ypred_ploss import MeanPredLoss
+from base.recommenders.dnn_sequential_recommender.history_vectorizers.add_mask_history_vectorizer import AddMaskHistoryVectorizer
+from base.recommenders.dnn_sequential_recommender.models.deberta4rec.deberta4rec import Deberta4Rec
+from base.recommenders.dnn_sequential_recommender.target_builders.items_masking_target_builder import ItemsMaskingTargetsBuilder
+from base.recommenders.dnn_sequential_recommender.targetsplitters.items_masking import ItemsMasking
+from base.evaluation.split_actions import LeaveOneOut
+from base.recommenders.top_recommender import TopRecommender
+from base.recommenders.svd import SvdRecommender
+from base.recommenders.dnn_sequential_recommender.dnn_sequential_recommender import DNNSequentialRecommender
+from base.recommenders.lightfm import LightFMRecommender
 
 
 
-from aprec.evaluation.metrics.ndcg import NDCG
-from aprec.evaluation.metrics.mrr import MRR
-from aprec.evaluation.metrics.map import MAP
-from aprec.evaluation.metrics.hit import HIT
+from base.evaluation.metrics.ndcg import NDCG
+from base.evaluation.metrics.mrr import MRR
+from base.evaluation.metrics.map import MAP
+from base.evaluation.metrics.hit import HIT
 
-from aprec.recommenders.filter_seen_recommender import FilterSeenRecommender
+from base.recommenders.filter_seen_recommender import FilterSeenRecommender
 
 USERS_FRACTIONS = [1.0]
 

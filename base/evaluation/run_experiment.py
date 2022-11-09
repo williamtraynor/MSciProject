@@ -4,9 +4,9 @@ import importlib.util
 import json
 import mmh3
 
-from aprec.utils.os_utils import shell
-from aprec.evaluation.evaluate_recommender import RecommendersEvaluator
-from aprec.datasets.datasets_register import DatasetsRegister
+from base.utils.os_utils import shell
+from base.evaluation.evaluate_recommender import RecommendersEvaluator
+from base.datasets.datasets_register import DatasetsRegister
 
 import tensorflow as tf
 

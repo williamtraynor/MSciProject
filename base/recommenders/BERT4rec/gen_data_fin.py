@@ -5,8 +5,8 @@ import random
 
 import tensorflow as tf
 
-from aprec.recommenders.BERT4rec.util import *
-from aprec.recommenders.BERT4rec.vocab import *
+from base.recommenders.BERT4rec.util import *
+from base.recommenders.BERT4rec.vocab import *
 import pickle
 import multiprocessing
 from argparse import ArgumentParser

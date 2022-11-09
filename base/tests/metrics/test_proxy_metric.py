@@ -3,9 +3,9 @@ import unittest
 
 import numpy as np
 
-from aprec.api.action import Action
-from aprec.evaluation.metrics.sampled_proxy_metric import SampledProxy
-from aprec.evaluation.metrics.precision import Precision
+from base.api.action import Action
+from base.evaluation.metrics.sampled_proxy_metric import SampledProxy
+from base.evaluation.metrics.precision import Precision
 
 
 class TestSampledProxyMetric(unittest.TestCase):

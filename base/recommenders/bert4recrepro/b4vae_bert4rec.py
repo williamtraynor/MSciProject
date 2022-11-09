@@ -1,9 +1,9 @@
 import os
 import torch
 import tqdm
-from aprec.recommenders.recommender import Recommender
-from aprec.api.action import Action
-from aprec.utils.item_id import ItemId
+from base.recommenders.recommender import Recommender
+from base.api.action import Action
+from base.utils.item_id import ItemId
 from b4rvae.dataloaders.bert import BertDataloader
 from b4rvae.models.bert import BERTModel
 from b4rvae.trainers.bert import BERTTrainer

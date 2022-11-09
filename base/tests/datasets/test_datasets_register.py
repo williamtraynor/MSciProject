@@ -1,4 +1,4 @@
-from aprec.datasets.datasets_register import DatasetsRegister
+from base.datasets.datasets_register import DatasetsRegister
 import unittest
 
 class TestDatasetsRegister(unittest.TestCase):

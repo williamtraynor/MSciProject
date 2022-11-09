@@ -1,8 +1,8 @@
-from aprec.losses import top1
-from aprec.recommenders.matrix_factorization import MatrixFactorizationRecommender
-from aprec.recommenders.filter_seen_recommender import FilterSeenRecommender
-from aprec.datasets.movielens20m import get_movielens20m_actions
-from aprec.utils.generator_limit import generator_limit
+from base.losses import top1
+from base.recommenders.matrix_factorization import MatrixFactorizationRecommender
+from base.recommenders.filter_seen_recommender import FilterSeenRecommender
+from base.datasets.movielens20m import get_movielens20m_actions
+from base.utils.generator_limit import generator_limit
 import tensorflow as tf
 import unittest
 

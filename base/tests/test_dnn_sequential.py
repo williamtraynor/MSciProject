@@ -4,11 +4,11 @@ USER_ID = '120'
 
 class TestDnnSequentialRecommender(unittest.TestCase):
     def test_mlp_recommender(self):
-        from aprec.recommenders.dnn_sequential_recommender.models.mlp_sequential import SequentialMLPModel
-        from aprec.recommenders.dnn_sequential_recommender.dnn_sequential_recommender import DNNSequentialRecommender
-        from aprec.recommenders.filter_seen_recommender import FilterSeenRecommender
-        from aprec.datasets.movielens20m import get_movielens20m_actions
-        from aprec.utils.generator_limit import generator_limit
+        from base.recommenders.dnn_sequential_recommender.models.mlp_sequential import SequentialMLPModel
+        from base.recommenders.dnn_sequential_recommender.dnn_sequential_recommender import DNNSequentialRecommender
+        from base.recommenders.filter_seen_recommender import FilterSeenRecommender
+        from base.datasets.movielens20m import get_movielens20m_actions
+        from base.utils.generator_limit import generator_limit
 
         model = SequentialMLPModel()
         val_users = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
@@ -24,11 +24,11 @@ class TestDnnSequentialRecommender(unittest.TestCase):
 
 
     def test_gru_model(self):
-        from aprec.recommenders.dnn_sequential_recommender.models.gru4rec import GRU4Rec
-        from aprec.recommenders.dnn_sequential_recommender.dnn_sequential_recommender import DNNSequentialRecommender
-        from aprec.recommenders.filter_seen_recommender import FilterSeenRecommender
-        from aprec.datasets.movielens20m import get_movielens20m_actions
-        from aprec.utils.generator_limit import generator_limit
+        from base.recommenders.dnn_sequential_recommender.models.gru4rec import GRU4Rec
+        from base.recommenders.dnn_sequential_recommender.dnn_sequential_recommender import DNNSequentialRecommender
+        from base.recommenders.filter_seen_recommender import FilterSeenRecommender
+        from base.datasets.movielens20m import get_movielens20m_actions
+        from base.utils.generator_limit import generator_limit
 
         val_users = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
         model = GRU4Rec()
@@ -44,12 +44,12 @@ class TestDnnSequentialRecommender(unittest.TestCase):
 
 
     def test_sasrec_model(self):
-        from aprec.recommenders.dnn_sequential_recommender.models.sasrec.sasrec import SASRec
-        from aprec.recommenders.dnn_sequential_recommender.dnn_sequential_recommender import DNNSequentialRecommender
-        from aprec.recommenders.dnn_sequential_recommender.targetsplitters.last_item_splitter import SequenceContinuation
-        from aprec.recommenders.filter_seen_recommender import FilterSeenRecommender
-        from aprec.datasets.movielens20m import get_movielens20m_actions
-        from aprec.utils.generator_limit import generator_limit
+        from base.recommenders.dnn_sequential_recommender.models.sasrec.sasrec import SASRec
+        from base.recommenders.dnn_sequential_recommender.dnn_sequential_recommender import DNNSequentialRecommender
+        from base.recommenders.dnn_sequential_recommender.targetsplitters.last_item_splitter import SequenceContinuation
+        from base.recommenders.filter_seen_recommender import FilterSeenRecommender
+        from base.datasets.movielens20m import get_movielens20m_actions
+        from base.utils.generator_limit import generator_limit
 
         val_users = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
         model = SASRec(embedding_size=32)
@@ -65,13 +65,13 @@ class TestDnnSequentialRecommender(unittest.TestCase):
         print(recs)
     
     def test_sasrec_model_sampled_target(self):
-        from aprec.recommenders.dnn_sequential_recommender.models.sasrec.sasrec import SASRec
-        from aprec.recommenders.dnn_sequential_recommender.target_builders.sampled_matrix_target_builder import SampledMatrixBuilder
-        from aprec.recommenders.dnn_sequential_recommender.dnn_sequential_recommender import DNNSequentialRecommender
-        from aprec.recommenders.dnn_sequential_recommender.targetsplitters.last_item_splitter import SequenceContinuation
-        from aprec.recommenders.filter_seen_recommender import FilterSeenRecommender
-        from aprec.datasets.movielens20m import get_movielens20m_actions
-        from aprec.utils.generator_limit import generator_limit
+        from base.recommenders.dnn_sequential_recommender.models.sasrec.sasrec import SASRec
+        from base.recommenders.dnn_sequential_recommender.target_builders.sampled_matrix_target_builder import SampledMatrixBuilder
+        from base.recommenders.dnn_sequential_recommender.dnn_sequential_recommender import DNNSequentialRecommender
+        from base.recommenders.dnn_sequential_recommender.targetsplitters.last_item_splitter import SequenceContinuation
+        from base.recommenders.filter_seen_recommender import FilterSeenRecommender
+        from base.datasets.movielens20m import get_movielens20m_actions
+        from base.utils.generator_limit import generator_limit
 
         val_users = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
         model = SASRec(embedding_size=32, sampled_targets=101)
@@ -89,12 +89,12 @@ class TestDnnSequentialRecommender(unittest.TestCase):
         print(recs)
 
     def test_sasrec_model_no_reuse(self):
-        from aprec.recommenders.dnn_sequential_recommender.models.sasrec.sasrec import SASRec
-        from aprec.recommenders.dnn_sequential_recommender.dnn_sequential_recommender import DNNSequentialRecommender
-        from aprec.recommenders.dnn_sequential_recommender.targetsplitters.last_item_splitter import SequenceContinuation
-        from aprec.recommenders.filter_seen_recommender import FilterSeenRecommender
-        from aprec.datasets.movielens20m import get_movielens20m_actions
-        from aprec.utils.generator_limit import generator_limit
+        from base.recommenders.dnn_sequential_recommender.models.sasrec.sasrec import SASRec
+        from base.recommenders.dnn_sequential_recommender.dnn_sequential_recommender import DNNSequentialRecommender
+        from base.recommenders.dnn_sequential_recommender.targetsplitters.last_item_splitter import SequenceContinuation
+        from base.recommenders.filter_seen_recommender import FilterSeenRecommender
+        from base.datasets.movielens20m import get_movielens20m_actions
+        from base.utils.generator_limit import generator_limit
         val_users = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
         model = SASRec(embedding_size=32, reuse_item_embeddings=False, encode_output_embeddings=True)
         recommender = DNNSequentialRecommender(model, train_epochs=10000, early_stop_epochs=50000,
@@ -109,11 +109,11 @@ class TestDnnSequentialRecommender(unittest.TestCase):
         print(recs)
 
     def test_caser_model(self):
-        from aprec.recommenders.dnn_sequential_recommender.models.caser import Caser
-        from aprec.recommenders.dnn_sequential_recommender.dnn_sequential_recommender import DNNSequentialRecommender
-        from aprec.recommenders.filter_seen_recommender import FilterSeenRecommender
-        from aprec.datasets.movielens20m import get_movielens20m_actions
-        from aprec.utils.generator_limit import generator_limit
+        from base.recommenders.dnn_sequential_recommender.models.caser import Caser
+        from base.recommenders.dnn_sequential_recommender.dnn_sequential_recommender import DNNSequentialRecommender
+        from base.recommenders.filter_seen_recommender import FilterSeenRecommender
+        from base.datasets.movielens20m import get_movielens20m_actions
+        from base.utils.generator_limit import generator_limit
 
         val_users = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
         model = Caser()
@@ -128,11 +128,11 @@ class TestDnnSequentialRecommender(unittest.TestCase):
         print(recs)
 
     def test_caser_model_no_uid(self):
-        from aprec.recommenders.dnn_sequential_recommender.models.caser import Caser
-        from aprec.recommenders.dnn_sequential_recommender.dnn_sequential_recommender import DNNSequentialRecommender
-        from aprec.recommenders.filter_seen_recommender import FilterSeenRecommender
-        from aprec.datasets.movielens20m import get_movielens20m_actions
-        from aprec.utils.generator_limit import generator_limit
+        from base.recommenders.dnn_sequential_recommender.models.caser import Caser
+        from base.recommenders.dnn_sequential_recommender.dnn_sequential_recommender import DNNSequentialRecommender
+        from base.recommenders.filter_seen_recommender import FilterSeenRecommender
+        from base.datasets.movielens20m import get_movielens20m_actions
+        from base.utils.generator_limit import generator_limit
 
 
         val_users = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
@@ -148,12 +148,12 @@ class TestDnnSequentialRecommender(unittest.TestCase):
         print(recs)
 
     def test_mlp_recommender_with_lambdarank(self):
-        from aprec.recommenders.dnn_sequential_recommender.models.mlp_sequential import SequentialMLPModel
-        from aprec.recommenders.dnn_sequential_recommender.dnn_sequential_recommender import DNNSequentialRecommender
-        from aprec.recommenders.filter_seen_recommender import FilterSeenRecommender
-        from aprec.datasets.movielens20m import get_movielens20m_actions
-        from aprec.utils.generator_limit import generator_limit
-        from aprec.losses.lambda_gamma_rank import LambdaGammaRankLoss
+        from base.recommenders.dnn_sequential_recommender.models.mlp_sequential import SequentialMLPModel
+        from base.recommenders.dnn_sequential_recommender.dnn_sequential_recommender import DNNSequentialRecommender
+        from base.recommenders.filter_seen_recommender import FilterSeenRecommender
+        from base.datasets.movielens20m import get_movielens20m_actions
+        from base.utils.generator_limit import generator_limit
+        from base.losses.lambda_gamma_rank import LambdaGammaRankLoss
 
         val_users = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
         batch_size = 10
@@ -173,12 +173,12 @@ class TestDnnSequentialRecommender(unittest.TestCase):
         print(metadata)
 
     def test_mlp_recommender_with_xendcg(self):
-        from aprec.recommenders.dnn_sequential_recommender.models.mlp_sequential import SequentialMLPModel
-        from aprec.recommenders.dnn_sequential_recommender.dnn_sequential_recommender import DNNSequentialRecommender
-        from aprec.recommenders.filter_seen_recommender import FilterSeenRecommender
-        from aprec.datasets.movielens20m import get_movielens20m_actions
-        from aprec.utils.generator_limit import generator_limit
-        from aprec.losses.xendcg import XENDCGLoss
+        from base.recommenders.dnn_sequential_recommender.models.mlp_sequential import SequentialMLPModel
+        from base.recommenders.dnn_sequential_recommender.dnn_sequential_recommender import DNNSequentialRecommender
+        from base.recommenders.filter_seen_recommender import FilterSeenRecommender
+        from base.datasets.movielens20m import get_movielens20m_actions
+        from base.utils.generator_limit import generator_limit
+        from base.losses.xendcg import XENDCGLoss
 
         val_users = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
         batch_size = 10

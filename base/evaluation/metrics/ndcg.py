@@ -11,8 +11,8 @@ class NDCG(Metric):
         if(len(recommendations) == 0):
             return 0
 
-        print(f'Recommendations:\n{type(recommendations)}\n{len(recommendations)}\n{recommendations}\n')
-        print(f'Actual Actions:\n{type(actual_actions)}\n{actual_actions}\n')
+        #print(f'Recommendations:\n{type(recommendations)}\n{len(recommendations)}\n{recommendations}\n')
+        #print(f'Actual Actions:\n{type(actual_actions)}\n{actual_actions}\n')
 
         actual_set = set([action.item_id for action in actual_actions])
         recommended = [recommendation[0] for recommendation in recommendations[:self.k]]

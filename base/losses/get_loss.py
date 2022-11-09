@@ -1,9 +1,9 @@
-from aprec.losses.bpr import BPRLoss
-from aprec.losses.bce import BCELoss
-from aprec.losses.climf import CLIMFLoss
-from aprec.losses.top1 import TOP1Loss
-from aprec.losses.lambda_gamma_rank import LambdaGammaRankLoss
-from aprec.losses.xendcg import XENDCGLoss
+from base.losses.bpr import BPRLoss
+from base.losses.bce import BCELoss
+from base.losses.climf import CLIMFLoss
+from base.losses.top1 import TOP1Loss
+from base.losses.lambda_gamma_rank import LambdaGammaRankLoss
+from base.losses.xendcg import XENDCGLoss
 import tensorflow as tf
 
 losses = {

@@ -2,8 +2,8 @@ import unittest
 
 
 def get_actions():
-    from aprec.utils.generator_limit import generator_limit
-    from aprec.datasets.movielens20m import get_movielens20m_actions
+    from base.utils.generator_limit import generator_limit
+    from base.datasets.movielens20m import get_movielens20m_actions
     return [action for action in generator_limit(get_movielens20m_actions(), 100000)]
 
 def get_recommender_and_add_actions():
@@ -13,7 +13,7 @@ def get_recommender_and_add_actions():
         return recommender
 
 def get_recommender():
-    from aprec.recommenders.vanilla_bert4rec import VanillaBERT4Rec
+    from base.recommenders.vanilla_bert4rec import VanillaBERT4Rec
     return  VanillaBERT4Rec(training_time_limit=5)
 
 class TestVanillaBert4rec(unittest.TestCase):
@@ -25,7 +25,7 @@ class TestVanillaBert4rec(unittest.TestCase):
         self.assertEqual(recs, [])
 
     def test_sampled_rankings(self):
-        from aprec.api.items_ranking_request import ItemsRankingRequest
+        from base.api.items_ranking_request import ItemsRankingRequest
         recommender = get_recommender_and_add_actions()
         predict_items = ['260', '294', '296']
         ranking_request = ItemsRankingRequest('120', ['260', '294', '296'])

@@ -1,7 +1,7 @@
 from random import Random
 
 import numpy as np
-from aprec.recommenders.dnn_sequential_recommender.target_builders.target_builders import TargetBuilder
+from base.recommenders.dnn_sequential_recommender.target_builders.target_builders import TargetBuilder
 
 
 class NegativePerPositiveTargetBuilder(TargetBuilder):

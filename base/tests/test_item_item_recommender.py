@@ -20,11 +20,11 @@ class TestItemItemRecommender(unittest.TestCase):
             self.assertAlmostEqual(rec1[i][1], rec2[i][1])
          
     def test_item_item_recommender(self):
-        from aprec.recommenders.item_item import ItemItemRecommender
-        from aprec.recommenders.filter_seen_recommender import FilterSeenRecommender
-        from aprec.datasets.movielens20m import get_movielens20m_actions, get_movies_catalog
-        from aprec.utils.generator_limit import generator_limit
-        from aprec.api.action import Action
+        from base.recommenders.item_item import ItemItemRecommender
+        from base.recommenders.filter_seen_recommender import FilterSeenRecommender
+        from base.datasets.movielens20m import get_movielens20m_actions, get_movies_catalog
+        from base.utils.generator_limit import generator_limit
+        from base.api.action import Action
         item_item_recommender = ItemItemRecommender()
         recommender = FilterSeenRecommender(item_item_recommender)
         catalog = get_movies_catalog()

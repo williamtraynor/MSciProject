@@ -3,7 +3,7 @@ import unittest
 class TestConfigs(unittest.TestCase):
     def test_configs(self):
         import os
-        from aprec.utils.os_utils import get_dir, recursive_listdir
+        from base.utils.os_utils import get_dir, recursive_listdir
         configs_dir = os.path.join(os.path.join(get_dir()), "evaluation/configs")
         for filename in recursive_listdir(configs_dir):
             if self.should_ignore(filename):
@@ -26,11 +26,11 @@ class TestConfigs(unittest.TestCase):
         return False
 
     def validate_config(self, filename):
-        from aprec.datasets.datasets_register import DatasetsRegister
-        from aprec.evaluation.samplers.sampler import TargetItemSampler
-        from aprec.evaluation.split_actions import ActionsSplitter
-        from aprec.evaluation.metrics.metric import Metric
-        from aprec.recommenders.recommender import Recommender
+        from base.datasets.datasets_register import DatasetsRegister
+        from base.evaluation.samplers.sampler import TargetItemSampler
+        from base.evaluation.split_actions import ActionsSplitter
+        from base.evaluation.metrics.metric import Metric
+        from base.recommenders.recommender import Recommender
         import importlib.util
         import os
         import sys

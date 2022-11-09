@@ -14,7 +14,7 @@ reference_actions =  [{'user_id': 430450, 'item_id': 91854, 'data': {}, 'timesta
 
 class TestYelpDataset(unittest.TestCase):
     def test_yelp_dataset(self):
-        from aprec.datasets.yelp import get_yelp_dataset
+        from base.datasets.yelp import get_yelp_dataset
         dataset = [json.loads(action.to_json()) for action in get_yelp_dataset(max_actions=10)]
         self.assertEqual(reference_actions, dataset)
 

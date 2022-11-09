@@ -33,7 +33,7 @@ def naive_bpr_impl(y_true, y_pred, softmax_weighted=False):
 
 class TestBPRLoss(unittest.TestCase):
         def compare_with_naive(self, a, b, ordered=False, weighted=False):
-            from aprec.losses.bpr import BPRLoss
+            from base.losses.bpr import BPRLoss
             import tensorflow as tf
 
             if not ordered:
@@ -65,7 +65,7 @@ class TestBPRLoss(unittest.TestCase):
 
         def test_bpr_loss(self):
             import tensorflow.keras.backend as K 
-            from aprec.losses.bpr import BPRLoss
+            from base.losses.bpr import BPRLoss
             bpr_loss = BPRLoss(max_positives=3, batch_size=2, num_items=4)
 
             val = bpr_loss(K.constant([[0, 0, 1, 1],
@@ -80,7 +80,7 @@ class TestBPRLoss(unittest.TestCase):
 
         def test_bpr_loss_with_softmax(self):
             import tensorflow.keras.backend as K 
-            from aprec.losses.bpr import BPRLoss
+            from base.losses.bpr import BPRLoss
             bpr_loss = BPRLoss(max_positives=3, batch_size=2, num_items=4, softmax_weighted=True)
             val = bpr_loss(K.constant([[0, 0, 1, 1],
                                  [0, 0, 1, 1]]),
@@ -88,7 +88,7 @@ class TestBPRLoss(unittest.TestCase):
             self.assertAlmostEqual(float(val), 0.2258300483226776, places=4)
 
         def test_bpr_truncate(self):
-            from aprec.losses.bpr import BPRLoss
+            from base.losses.bpr import BPRLoss
             import tensorflow as tf 
 
             bpr_loss = BPRLoss(max_positives=3, pred_truncate=1, num_items=4, batch_size=1)

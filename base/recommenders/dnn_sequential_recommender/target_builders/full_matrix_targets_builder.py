@@ -1,6 +1,6 @@
 import numpy as np
 from scipy.sparse import csr_matrix
-from aprec.recommenders.dnn_sequential_recommender.target_builders.target_builders import TargetBuilder
+from base.recommenders.dnn_sequential_recommender.target_builders.target_builders import TargetBuilder
 
 
 class FullMatrixTargetsBuilder(TargetBuilder):

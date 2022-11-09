@@ -1,6 +1,6 @@
 import tensorflow as tf
 
-from aprec.losses.loss import Loss
+from base.losses.loss import Loss
 
 class LambdaGammaRankLoss(Loss):
     #num items and batch size need to be specified before usage.

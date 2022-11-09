@@ -1,6 +1,6 @@
 from unittest import TestCase
 import unittest
-from aprec.datasets.datasets_register import DatasetsRegister
+from base.datasets.datasets_register import DatasetsRegister
 
 
 class TestNetflixDataset(TestCase):

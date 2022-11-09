@@ -7,20 +7,20 @@ from collections import defaultdict
 import tensorflow as tf
 
 from tqdm import tqdm
-from aprec.recommenders.dnn_sequential_recommender.history_vectorizers.default_history_vectorizer import DefaultHistoryVectrizer
-from aprec.recommenders.dnn_sequential_recommender.history_vectorizers.history_vectorizer import HistoryVectorizer
-from aprec.recommenders.dnn_sequential_recommender.target_builders.full_matrix_targets_builder import FullMatrixTargetsBuilder
-from aprec.recommenders.dnn_sequential_recommender.targetsplitters.last_item_splitter import SequenceContinuation
-from aprec.recommenders.dnn_sequential_recommender.targetsplitters.random_fraction_splitter import RandomFractionSplitter
-from aprec.recommenders.dnn_sequential_recommender.targetsplitters.targetsplitter import TargetSplitter
+from base.recommenders.dnn_sequential_recommender.history_vectorizers.default_history_vectorizer import DefaultHistoryVectrizer
+from base.recommenders.dnn_sequential_recommender.history_vectorizers.history_vectorizer import HistoryVectorizer
+from base.recommenders.dnn_sequential_recommender.target_builders.full_matrix_targets_builder import FullMatrixTargetsBuilder
+from base.recommenders.dnn_sequential_recommender.targetsplitters.last_item_splitter import SequenceContinuation
+from base.recommenders.dnn_sequential_recommender.targetsplitters.random_fraction_splitter import RandomFractionSplitter
+from base.recommenders.dnn_sequential_recommender.targetsplitters.targetsplitter import TargetSplitter
 
-from aprec.utils.item_id import ItemId
-from aprec.recommenders.metrics.ndcg import KerasNDCG
-from aprec.recommenders.recommender import Recommender
-from aprec.recommenders.dnn_sequential_recommender.data_generator.data_generator import DataGenerator
-from aprec.recommenders.dnn_sequential_recommender.models.sequential_recsys_model import SequentialRecsysModel
-from aprec.losses.loss import Loss
-from aprec.losses.bce import BCELoss
+from base.utils.item_id import ItemId
+from base.recommenders.metrics.ndcg import KerasNDCG
+from base.recommenders.recommender import Recommender
+from base.recommenders.dnn_sequential_recommender.data_generator.data_generator import DataGenerator
+from base.recommenders.dnn_sequential_recommender.models.sequential_recsys_model import SequentialRecsysModel
+from base.losses.loss import Loss
+from base.losses.bce import BCELoss
 
 from tensorflow.keras.optimizers import Adam
 
@@ -125,7 +125,7 @@ class DNNSequentialRecommender(Recommender):
         self.max_user_features, self.max_user_feature_val = self.get_max_user_features()
         train_users, train_user_ids, train_features, val_users, val_user_ids, val_features = self.train_val_split()
 
-        print("VAL USERS: ",val_users)
+        #print("VAL USERS: ",val_users)
         
         print("train_users: {}, val_users:{}, items:{}".format(len(train_users), len(val_users), self.items.size()))
         val_generator = DataGenerator(val_users, val_user_ids, val_features, self.model_arch.max_history_length,

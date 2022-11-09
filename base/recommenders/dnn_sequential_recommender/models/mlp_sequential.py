@@ -1,7 +1,7 @@
 from tensorflow.keras.models import Sequential
 import tensorflow.keras.layers as layers
 
-from aprec.recommenders.dnn_sequential_recommender.models.sequential_recsys_model import SequentialRecsysModel
+from base.recommenders.dnn_sequential_recommender.models.sequential_recsys_model import SequentialRecsysModel
 
 class SequentialMLPModel(SequentialRecsysModel):
     def __init__(self,

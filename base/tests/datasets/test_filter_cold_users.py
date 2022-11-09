@@ -2,8 +2,8 @@ import unittest
 
 class TestFilterColdUsers(unittest.TestCase):
     def test_filter_cold_users(self):
-        from aprec.api.action import  Action
-        from aprec.datasets.dataset_utils import filter_cold_users
+        from base.api.action import  Action
+        from base.datasets.dataset_utils import filter_cold_users
         actions = [Action(item_id=1, user_id=1, timestamp=1), 
                    Action(item_id=2, user_id=1, timestamp=2), 
                    Action(item_id=1, user_id=2, timestamp=1)]

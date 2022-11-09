@@ -806,6 +806,8 @@ class TFBertMainLayer(tf.keras.layers.Layer):
             training=training,
         )
 
+        embedding_output = tf.nn.l2_normalize(embedding_output, axis=2)
+
         # We create a 3D attention mask from a 2D tensor mask.
         # Sizes are [batch_size, 1, 1, to_seq_length]
         # So we can broadcast to [batch_size, num_heads, from_seq_length, to_seq_length]
@@ -1362,11 +1364,9 @@ class TFBertForMaskedLM(TFBertPreTrainedModel, TFMaskedLanguageModelingLoss):
         sequence_output = outputs[0]
         prediction_scores = self.mlm(sequence_output=sequence_output, training=training)
 
-        embeddings = tf.nn.l2_normalize(embeddings, axis=2)
-
-        loss = None if labels is None else ContrastiveLoss()(labels, embeddings)
-
-        #loss = None if labels is None else self.hf_compute_loss(labels=labels, logits=prediction_scores)
+        #loss = None if labels is None else ContrastiveLoss()(labels, embeddings)
+        
+        loss = None if labels is None else self.hf_compute_loss(labels=labels, logits=prediction_scores)
         
         if not return_dict:
             output = (prediction_scores,) + outputs[2:]
@@ -1472,8 +1472,6 @@ class TFBertLMHeadModel(TFBertPreTrainedModel, TFCausalLanguageModelingLoss):
             Labels for computing the cross entropy classification loss. Indices should be in `[0, ...,
             config.vocab_size - 1]`.
         """
-
-        print('HELLO')
 
         outputs = self.bert(
             input_ids=input_ids,

@@ -3,10 +3,10 @@ import os
 import torch
 import tqdm
 
-from aprec.recommenders.recommender import Recommender
-from aprec.api.action import Action
+from base.recommenders.recommender import Recommender
+from base.api.action import Action
 import tempfile
-from aprec.utils.item_id import ItemId
+from base.utils.item_id import ItemId
 from recbole.config import Config
 from recbole.data import create_dataset, get_dataloader
 from recbole.utils import get_model, get_trainer

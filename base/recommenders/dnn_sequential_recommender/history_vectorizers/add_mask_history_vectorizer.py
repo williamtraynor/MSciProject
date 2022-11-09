@@ -1,5 +1,5 @@
 import numpy as np
-from aprec.recommenders.dnn_sequential_recommender.history_vectorizers.history_vectorizer import HistoryVectorizer
+from base.recommenders.dnn_sequential_recommender.history_vectorizers.history_vectorizer import HistoryVectorizer
 
 class AddMaskHistoryVectorizer(HistoryVectorizer):
     def __call__(self, user_actions):

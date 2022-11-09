@@ -3,10 +3,10 @@ import unittest
 class TestLightFMRecommender(unittest.TestCase):
     def test_lightfm_recommender(self):
         USER_ID = '120'
-        from aprec.recommenders.filter_seen_recommender import FilterSeenRecommender
-        from aprec.recommenders.lightfm import LightFMRecommender
-        from aprec.datasets.movielens20m import get_movielens20m_actions
-        from aprec.utils.generator_limit import generator_limit
+        from base.recommenders.filter_seen_recommender import FilterSeenRecommender
+        from base.recommenders.lightfm import LightFMRecommender
+        from base.datasets.movielens20m import get_movielens20m_actions
+        from base.utils.generator_limit import generator_limit
 
         lightfm_recommender = LightFMRecommender(30, 'bpr')
         recommender = FilterSeenRecommender(lightfm_recommender)

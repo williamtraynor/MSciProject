@@ -4,9 +4,9 @@ class TestBCELoss(unittest.TestCase):
     def test_bce_loss(self):
         from tensorflow.keras.losses import BinaryCrossentropy
         import tensorflow as tf
-        from aprec.tests.lossess.bce_bad_sample import y_true as bad_y_true
-        from aprec.tests.lossess.bce_bad_sample import y_pred as bad_y_pred
-        from aprec.losses.bce import BCELoss
+        from base.tests.lossess.bce_bad_sample import y_true as bad_y_true
+        from base.tests.lossess.bce_bad_sample import y_pred as bad_y_pred
+        from base.losses.bce import BCELoss
         loss = float(BCELoss()(bad_y_true, bad_y_pred))
         print(loss)
 

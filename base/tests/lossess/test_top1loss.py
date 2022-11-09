@@ -33,7 +33,7 @@ def naive_top1_impl(y_true, y_pred, softmax_weighted=False):
 class TestTOP1Loss(unittest.TestCase):
         def compare_with_naive(self, a, b, ordered=False, weighted=False):
             import tensorflow as tf
-            from aprec.losses.top1 import TOP1Loss
+            from base.losses.top1 import TOP1Loss
 
 
             if not ordered:
@@ -61,7 +61,7 @@ class TestTOP1Loss(unittest.TestCase):
                         
 
         def test_top1_loss(self):
-            from aprec.losses.top1 import TOP1Loss
+            from base.losses.top1 import TOP1Loss
             import tensorflow.keras.backend as K
 
             top1_loss = TOP1Loss() 
@@ -71,7 +71,7 @@ class TestTOP1Loss(unittest.TestCase):
             self.assertAlmostEqual(float(val),1.059244155883789, places=4)
 
         def test_top1_truncate(self):
-            from aprec.losses.top1 import TOP1Loss
+            from base.losses.top1 import TOP1Loss
             import tensorflow as tf 
 
             top1_loss = TOP1Loss(pred_truncate=1) 

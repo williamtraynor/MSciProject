@@ -1,5 +1,5 @@
 from xmlrpc.client import Boolean
-from aprec.recommenders.dnn_sequential_recommender.models.sequential_recsys_model import SequentialRecsysModel
+from base.recommenders.dnn_sequential_recommender.models.sequential_recsys_model import SequentialRecsysModel
 from transformers.models.bert.modeling_tf_bert import BertConfig, TFBertMLMHead
 
 from tensorflow.keras import Model

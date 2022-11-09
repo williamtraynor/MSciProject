@@ -3,38 +3,38 @@ import random
 
 from tqdm import tqdm
 
-from aprec.datasets.mts_kion import get_mts_kion_dataset, get_submission_user_ids, get_users, get_items
-from aprec.recommenders.dnn_sequential_recommender.models.sasrec.sasrec import SASRec
-from aprec.recommenders.dnn_sequential_recommender.target_builders.full_matrix_targets_builder import FullMatrixTargetsBuilder
-from aprec.recommenders.dnn_sequential_recommender.target_builders.negative_per_positive_target import NegativePerPositiveTargetBuilder
-from aprec.recommenders.dnn_sequential_recommender.targetsplitters.recency_sequence_sampling import RecencySequenceSampling
-from aprec.recommenders.dnn_sequential_recommender.targetsplitters.last_item_splitter import SequenceContinuation
-from aprec.recommenders.dnn_sequential_recommender.targetsplitters.random_fraction_splitter import RandomFractionSplitter
-from aprec.recommenders.dnn_sequential_recommender.targetsplitters.shifted_sequence_splitter import ShiftedSequenceSplitter
-from aprec.recommenders.kion_challenge_featurizer import KionChallengeFeaturizer
-from aprec.recommenders.metrics.ndcg import KerasNDCG
-from aprec.recommenders.top_recommender import TopRecommender
-from aprec.recommenders.conditional_top_recommender import ConditionalTopRecommender
-from aprec.recommenders.svd import SvdRecommender
-from aprec.recommenders.lightfm import LightFMRecommender
-from aprec.recommenders.filter_seen_recommender import FilterSeenRecommender
-from aprec.evaluation.metrics.precision import Precision
-from aprec.evaluation.metrics.recall import Recall
-from aprec.evaluation.metrics.ndcg import NDCG
-from aprec.evaluation.metrics.mrr import MRR
-from aprec.evaluation.metrics.map import MAP
+from base.datasets.mts_kion import get_mts_kion_dataset, get_submission_user_ids, get_users, get_items
+from base.recommenders.dnn_sequential_recommender.models.sasrec.sasrec import SASRec
+from base.recommenders.dnn_sequential_recommender.target_builders.full_matrix_targets_builder import FullMatrixTargetsBuilder
+from base.recommenders.dnn_sequential_recommender.target_builders.negative_per_positive_target import NegativePerPositiveTargetBuilder
+from base.recommenders.dnn_sequential_recommender.targetsplitters.recency_sequence_sampling import RecencySequenceSampling
+from base.recommenders.dnn_sequential_recommender.targetsplitters.last_item_splitter import SequenceContinuation
+from base.recommenders.dnn_sequential_recommender.targetsplitters.random_fraction_splitter import RandomFractionSplitter
+from base.recommenders.dnn_sequential_recommender.targetsplitters.shifted_sequence_splitter import ShiftedSequenceSplitter
+from base.recommenders.kion_challenge_featurizer import KionChallengeFeaturizer
+from base.recommenders.metrics.ndcg import KerasNDCG
+from base.recommenders.top_recommender import TopRecommender
+from base.recommenders.conditional_top_recommender import ConditionalTopRecommender
+from base.recommenders.svd import SvdRecommender
+from base.recommenders.lightfm import LightFMRecommender
+from base.recommenders.filter_seen_recommender import FilterSeenRecommender
+from base.evaluation.metrics.precision import Precision
+from base.evaluation.metrics.recall import Recall
+from base.evaluation.metrics.ndcg import NDCG
+from base.evaluation.metrics.mrr import MRR
+from base.evaluation.metrics.map import MAP
 from tensorflow.keras.optimizers import Adam
-from aprec.evaluation.metrics.hit import HIT
-from aprec.losses.lambda_gamma_rank import LambdaGammaRankLoss
-from aprec.recommenders.deep_mf import DeepMFRecommender
-from aprec.losses.bce import BCELoss
-from aprec.recommenders.dnn_sequential_recommender.dnn_sequential_recommender import DNNSequentialRecommender
-from aprec.recommenders.transition_chain_recommender import TransitionsChainRecommender
-from aprec.recommenders.lambdamart_ensemble_recommender import LambdaMARTEnsembleRecommender
-from aprec.recommenders.dnn_sequential_recommender.models.caser import Caser
-from aprec.recommenders.dnn_sequential_recommender.featurizers.hashing_featurizer import HashingFeaturizer
-from aprec.recommenders.svd import SvdRecommender
-from aprec.evaluation.split_actions import LeaveOneOut
+from base.evaluation.metrics.hit import HIT
+from base.losses.lambda_gamma_rank import LambdaGammaRankLoss
+from base.recommenders.deep_mf import DeepMFRecommender
+from base.losses.bce import BCELoss
+from base.recommenders.dnn_sequential_recommender.dnn_sequential_recommender import DNNSequentialRecommender
+from base.recommenders.transition_chain_recommender import TransitionsChainRecommender
+from base.recommenders.lambdamart_ensemble_recommender import LambdaMARTEnsembleRecommender
+from base.recommenders.dnn_sequential_recommender.models.caser import Caser
+from base.recommenders.dnn_sequential_recommender.featurizers.hashing_featurizer import HashingFeaturizer
+from base.recommenders.svd import SvdRecommender
+from base.evaluation.split_actions import LeaveOneOut
 
 DATASET = "mts_kion"
 USERS = get_users

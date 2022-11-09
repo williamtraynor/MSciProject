@@ -5,13 +5,13 @@ class TestLambdaMartEnsembleRecommender(unittest.TestCase):
     def test_lambdamart_ensemble_recommender(self):
         import json
         import os
-        from aprec.datasets.movielens20m import get_movielens20m_actions
-        from aprec.recommenders.top_recommender import TopRecommender
-        from aprec.recommenders.svd import SvdRecommender
-        from aprec.recommenders.lambdamart_ensemble_recommender import LambdaMARTEnsembleRecommender
-        from aprec.recommenders.filter_seen_recommender import FilterSeenRecommender
+        from base.datasets.movielens20m import get_movielens20m_actions
+        from base.recommenders.top_recommender import TopRecommender
+        from base.recommenders.svd import SvdRecommender
+        from base.recommenders.lambdamart_ensemble_recommender import LambdaMARTEnsembleRecommender
+        from base.recommenders.filter_seen_recommender import FilterSeenRecommender
         import tempfile
-        from aprec.utils.generator_limit import generator_limit
+        from base.utils.generator_limit import generator_limit
         import pandas as pd
 
         tempdir = tempfile.mkdtemp("lambdamart_recommender_test")

@@ -1,32 +1,32 @@
-from aprec.recommenders.dnn_sequential_recommender.models.sasrec.sasrec import SASRec
-from aprec.recommenders.dnn_sequential_recommender.models.gru4rec import GRU4Rec
-from aprec.recommenders.dnn_sequential_recommender.models.caser import Caser
-from aprec.recommenders.dnn_sequential_recommender.target_builders.full_matrix_targets_builder import FullMatrixTargetsBuilder
-from aprec.recommenders.dnn_sequential_recommender.target_builders.negative_per_positive_target import NegativePerPositiveTargetBuilder
-from aprec.recommenders.dnn_sequential_recommender.targetsplitters.last_item_splitter import SequenceContinuation
-from aprec.recommenders.dnn_sequential_recommender.targetsplitters.shifted_sequence_splitter import ShiftedSequenceSplitter
-from aprec.recommenders.dnn_sequential_recommender.targetsplitters.recency_sequence_sampling import RecencySequenceSampling
-from aprec.recommenders.dnn_sequential_recommender.targetsplitters.recency_sequence_sampling import exponential_importance
-from aprec.evaluation.samplers.random_sampler import RandomTargetItemSampler
-from aprec.recommenders.metrics.ndcg import KerasNDCG
-from aprec.recommenders.top_recommender import TopRecommender
-from aprec.recommenders.svd import SvdRecommender
-from aprec.recommenders.dnn_sequential_recommender.dnn_sequential_recommender import DNNSequentialRecommender
-from aprec.recommenders.lightfm import LightFMRecommender
-from aprec.recommenders.vanilla_bert4rec import VanillaBERT4Rec
-from aprec.losses.bce import BCELoss
-from aprec.losses.lambda_gamma_rank import LambdaGammaRankLoss
+from base.recommenders.dnn_sequential_recommender.models.sasrec.sasrec import SASRec
+from base.recommenders.dnn_sequential_recommender.models.gru4rec import GRU4Rec
+from base.recommenders.dnn_sequential_recommender.models.caser import Caser
+from base.recommenders.dnn_sequential_recommender.target_builders.full_matrix_targets_builder import FullMatrixTargetsBuilder
+from base.recommenders.dnn_sequential_recommender.target_builders.negative_per_positive_target import NegativePerPositiveTargetBuilder
+from base.recommenders.dnn_sequential_recommender.targetsplitters.last_item_splitter import SequenceContinuation
+from base.recommenders.dnn_sequential_recommender.targetsplitters.shifted_sequence_splitter import ShiftedSequenceSplitter
+from base.recommenders.dnn_sequential_recommender.targetsplitters.recency_sequence_sampling import RecencySequenceSampling
+from base.recommenders.dnn_sequential_recommender.targetsplitters.recency_sequence_sampling import exponential_importance
+from base.evaluation.samplers.random_sampler import RandomTargetItemSampler
+from base.recommenders.metrics.ndcg import KerasNDCG
+from base.recommenders.top_recommender import TopRecommender
+from base.recommenders.svd import SvdRecommender
+from base.recommenders.dnn_sequential_recommender.dnn_sequential_recommender import DNNSequentialRecommender
+from base.recommenders.lightfm import LightFMRecommender
+from base.recommenders.vanilla_bert4rec import VanillaBERT4Rec
+from base.losses.bce import BCELoss
+from base.losses.lambda_gamma_rank import LambdaGammaRankLoss
 
 
 
-from aprec.evaluation.metrics.ndcg import NDCG
-from aprec.evaluation.metrics.mrr import MRR
-from aprec.evaluation.metrics.map import MAP
-from aprec.evaluation.metrics.hit import HIT
+from base.evaluation.metrics.ndcg import NDCG
+from base.evaluation.metrics.mrr import MRR
+from base.evaluation.metrics.map import MAP
+from base.evaluation.metrics.hit import HIT
 
 from tensorflow.keras.optimizers import Adam
 
-from aprec.recommenders.filter_seen_recommender import FilterSeenRecommender
+from base.recommenders.filter_seen_recommender import FilterSeenRecommender
 
 USERS_FRACTIONS = [1.0]
 

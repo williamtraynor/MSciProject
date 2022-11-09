@@ -1,8 +1,8 @@
 from math import perm
 import tensorflow as tf
 
-from aprec.losses.loss_utils import get_pairwise_diff_batch, get_truncated, masked_softmax
-from aprec.losses.loss import Loss
+from base.losses.loss_utils import get_pairwise_diff_batch, get_truncated, masked_softmax
+from base.losses.loss import Loss
 
 #BPR Loss as  described in orignial paper. 
 #https://arxiv.org/abs/1205.2618

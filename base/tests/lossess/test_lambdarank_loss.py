@@ -2,7 +2,7 @@ import unittest
 
 class TestLambdarankLoss(unittest.TestCase):
     def lambdas_sample_test(self, y, s, lambdas, ndcg_at=30, bce_weight=0.0, remove_batch_dim=False):
-        from aprec.losses.lambda_gamma_rank import  LambdaGammaRankLoss
+        from base.losses.lambda_gamma_rank import  LambdaGammaRankLoss
         import tensorflow.keras.backend as K
         import tensorflow as tf
 
@@ -71,7 +71,7 @@ class TestLambdarankLoss(unittest.TestCase):
 
 
     def test_dcg(self):
-        from aprec.losses.lambda_gamma_rank import  LambdaGammaRankLoss
+        from base.losses.lambda_gamma_rank import  LambdaGammaRankLoss
         import tensorflow.keras.backend as K
 
 
@@ -86,7 +86,7 @@ class TestLambdarankLoss(unittest.TestCase):
 
 
     def test_model_lambdarank(self):
-        from aprec.losses.lambda_gamma_rank import  LambdaGammaRankLoss
+        from base.losses.lambda_gamma_rank import  LambdaGammaRankLoss
         import tensorflow.keras.backend as K
         from tensorflow.keras import Sequential
         from tensorflow.keras.layers import Dense

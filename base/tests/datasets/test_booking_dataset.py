@@ -3,8 +3,8 @@ from unittest import TestCase
 
 class TestBookingDatset(TestCase):
     def test_booking_download(self):
-        from aprec.datasets.booking import download_booking_train, download_booking_test
-        from aprec.utils.os_utils import file_md5
+        from base.datasets.booking import download_booking_train, download_booking_test
+        from base.utils.os_utils import file_md5
 
         #download train file
         result_file = download_booking_train()
@@ -19,7 +19,7 @@ class TestBookingDatset(TestCase):
     def test_booking_dataset(self):
         import os.path
 
-        from aprec.datasets.booking import get_booking_dataset
+        from base.datasets.booking import get_booking_dataset
         import json
 
         local_path = os.path.abspath(os.path.dirname(__file__))

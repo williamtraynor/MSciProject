@@ -3,13 +3,13 @@ import unittest
 
 class TestRecommenderEvaluator(unittest.TestCase):
     def test_recommender_evaluator(self):
-        from aprec.datasets.movielens20m import get_movielens20m_actions
-        from aprec.evaluation.samplers.pop_sampler import PopTargetItemsSampler
-        from aprec.utils.generator_limit import generator_limit
-        from aprec.evaluation.split_actions import LeaveOneOut
-        from aprec.evaluation.metrics.precision import Precision
-        from aprec.recommenders.top_recommender import TopRecommender
-        from aprec.evaluation.evaluate_recommender import RecommendersEvaluator
+        from base.datasets.movielens20m import get_movielens20m_actions
+        from base.evaluation.samplers.pop_sampler import PopTargetItemsSampler
+        from base.utils.generator_limit import generator_limit
+        from base.evaluation.split_actions import LeaveOneOut
+        from base.evaluation.metrics.precision import Precision
+        from base.recommenders.top_recommender import TopRecommender
+        from base.evaluation.evaluate_recommender import RecommendersEvaluator
         import tempfile
 
 

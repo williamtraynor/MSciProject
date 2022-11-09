@@ -1,4 +1,4 @@
-from aprec.recommenders.dnn_sequential_recommender.targetsplitters.targetsplitter import TargetSplitter
+from base.recommenders.dnn_sequential_recommender.targetsplitters.targetsplitter import TargetSplitter
 import numpy as np
 from random import Random
 

@@ -2,7 +2,7 @@ import numpy as np
 from tensorflow.keras import Model
 import tensorflow as tf
 
-from aprec.recommenders.dnn_sequential_recommender.models.sequential_recsys_model import SequentialRecsysModel
+from base.recommenders.dnn_sequential_recommender.models.sequential_recsys_model import SequentialRecsysModel
 from transformers import AlbertConfig, TFAlbertForMaskedLM 
 class ALBERT4Rec(SequentialRecsysModel):
     def __init__(self, output_layer_activation = 'linear',

@@ -1,6 +1,6 @@
 import tensorflow.keras.layers as layers
 from  tensorflow.keras.models import Model
-from aprec.recommenders.dnn_sequential_recommender.models.sequential_recsys_model import SequentialRecsysModel
+from base.recommenders.dnn_sequential_recommender.models.sequential_recsys_model import SequentialRecsysModel
 
 #https://dl.acm.org/doi/abs/10.1145/3159652.3159656
 class Caser(SequentialRecsysModel):

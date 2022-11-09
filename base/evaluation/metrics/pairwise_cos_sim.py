@@ -1,7 +1,7 @@
 from collections import Counter, defaultdict
 import random
 
-from aprec.evaluation.metrics.metric import Metric
+from base.evaluation.metrics.metric import Metric
 import numpy as np
 from tqdm import tqdm
 

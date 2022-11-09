@@ -1,12 +1,12 @@
 import os
 import logging
 
-from aprec.utils.os_utils import mkdir_p_local, get_dir, console_logging, shell
-from aprec.api.action import Action
-from aprec.api.item import Item
-from aprec.api.lfm_item import LFMItem
-from aprec.api.catalog import Catalog
-from aprec.datasets.download_file import download_file
+from base.utils.os_utils import mkdir_p_local, get_dir, console_logging, shell
+from base.api.action import Action
+from base.api.item import Item
+from base.api.lfm_item import LFMItem
+from base.api.catalog import Catalog
+from base.datasets.download_file import download_file
 from datetime import datetime
 
 DATASET_NAME = 'ml-20m'

@@ -1,7 +1,7 @@
-from aprec.recommenders.mlp import GreedyMLP
-from aprec.recommenders.filter_seen_recommender import FilterSeenRecommender
-from aprec.datasets.movielens20m import get_movielens20m_actions, get_movies_catalog
-from aprec.utils.generator_limit import generator_limit
+from base.recommenders.mlp import GreedyMLP
+from base.recommenders.filter_seen_recommender import FilterSeenRecommender
+from base.datasets.movielens20m import get_movielens20m_actions, get_movies_catalog
+from base.utils.generator_limit import generator_limit
 import tensorflow as tf
 import unittest
 

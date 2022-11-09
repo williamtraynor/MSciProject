@@ -3,8 +3,8 @@ import unittest
 class TestConditionalTopRecommender(unittest.TestCase):
     def test_conditional_top_recommender(self):
         from typing import List
-        from aprec.api.action import Action
-        from aprec.recommenders.conditional_top_recommender import ConditionalTopRecommender
+        from base.api.action import Action
+        from base.recommenders.conditional_top_recommender import ConditionalTopRecommender
 
         recommender = ConditionalTopRecommender(conditional_field='country_id')
         actions: List[Action] = [

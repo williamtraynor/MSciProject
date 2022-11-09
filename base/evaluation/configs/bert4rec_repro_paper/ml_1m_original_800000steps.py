@@ -1,13 +1,13 @@
-from aprec.evaluation.samplers.pop_sampler import PopTargetItemsSampler
-from aprec.evaluation.split_actions import LeaveOneOut
-from aprec.recommenders.vanilla_bert4rec import VanillaBERT4Rec
+from base.evaluation.samplers.pop_sampler import PopTargetItemsSampler
+from base.evaluation.split_actions import LeaveOneOut
+from base.recommenders.vanilla_bert4rec import VanillaBERT4Rec
 
-from aprec.evaluation.metrics.ndcg import NDCG
-from aprec.evaluation.metrics.mrr import MRR
-from aprec.evaluation.metrics.map import MAP
-from aprec.evaluation.metrics.hit import HIT
+from base.evaluation.metrics.ndcg import NDCG
+from base.evaluation.metrics.mrr import MRR
+from base.evaluation.metrics.map import MAP
+from base.evaluation.metrics.hit import HIT
 
-from aprec.recommenders.filter_seen_recommender import FilterSeenRecommender
+from base.recommenders.filter_seen_recommender import FilterSeenRecommender
 
 USERS_FRACTIONS = [1.0]
 

@@ -1,4 +1,4 @@
-from aprec.recommenders.metrics.ndcg import KerasNDCG
+from base.recommenders.metrics.ndcg import KerasNDCG
 import tensorflow.keras.backend as K
 import tensorflow as tf
 

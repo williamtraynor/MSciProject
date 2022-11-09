@@ -4,8 +4,8 @@
 
 import tensorflow as tf
 
-from aprec.losses.loss_utils import my_map
-from aprec.losses.loss import Loss
+from base.losses.loss_utils import my_map
+from base.losses.loss import Loss
 
 
 class CLIMFLoss(Loss):

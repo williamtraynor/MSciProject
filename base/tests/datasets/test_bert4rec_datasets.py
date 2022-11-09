@@ -3,8 +3,8 @@ import unittest
 class TestBert4recDatasets(unittest.TestCase):
     def test_bert4rec_dataset(self):
         import json
-        from aprec.datasets.dataset_stats import dataset_stats
-        from aprec.datasets.bert4rec_datasets import get_bert4rec_dataset
+        from base.datasets.dataset_stats import dataset_stats
+        from base.datasets.bert4rec_datasets import get_bert4rec_dataset
 
         for dataset_name in ["beauty", "steam", "ml-1m"]:
             print(f"analyzing dataset {dataset_name}")

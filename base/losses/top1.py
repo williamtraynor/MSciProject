@@ -1,7 +1,7 @@
 import tensorflow as tf
-from aprec.losses.loss_utils import get_pairwise_diff_batch, get_truncated, masked_softmax
+from base.losses.loss_utils import get_pairwise_diff_batch, get_truncated, masked_softmax
 
-from aprec.losses.loss import Loss
+from base.losses.loss import Loss
 
 #TOP1 loss as defined in GRU4rec Papper https://arxiv.org/pdf/1511.06939
 #We assume that there is only one positive sample. 

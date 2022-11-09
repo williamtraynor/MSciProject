@@ -25,11 +25,11 @@ class TestSvdRecommender(unittest.TestCase):
             self.assertAlmostEqual(rec1[i][1], rec2[i][1])
          
     def test_svd_recommender(self):
-        from aprec.recommenders.svd import SvdRecommender
-        from aprec.recommenders.filter_seen_recommender import FilterSeenRecommender
-        from aprec.datasets.movielens20m import get_movielens20m_actions
-        from aprec.utils.generator_limit import generator_limit
-        from aprec.api.action import Action
+        from base.recommenders.svd import SvdRecommender
+        from base.recommenders.filter_seen_recommender import FilterSeenRecommender
+        from base.datasets.movielens20m import get_movielens20m_actions
+        from base.utils.generator_limit import generator_limit
+        from base.api.action import Action
 
         svd_recommender = SvdRecommender(10, random_seed=31337)
         recommender = FilterSeenRecommender(svd_recommender)

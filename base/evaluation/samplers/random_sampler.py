@@ -1,8 +1,8 @@
 import numpy as np
 
-from aprec.api.items_ranking_request import ItemsRankingRequest
-from aprec.evaluation.evaluation_utils import group_by_user
-from aprec.evaluation.samplers.sampler import TargetItemSampler
+from base.api.items_ranking_request import ItemsRankingRequest
+from base.evaluation.evaluation_utils import group_by_user
+from base.evaluation.samplers.sampler import TargetItemSampler
 
 
 class RandomTargetItemSampler(TargetItemSampler):

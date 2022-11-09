@@ -1,11 +1,11 @@
-from aprec.evaluation.metrics.hit import HIT
-from aprec.evaluation.metrics.map import MAP
-from aprec.evaluation.metrics.mrr import MRR
-from aprec.evaluation.metrics.ndcg import NDCG
-from aprec.evaluation.samplers.pop_sampler import PopTargetItemsSampler
-from aprec.evaluation.split_actions import LeaveOneOut
-from aprec.recommenders.bert4recrepro.b4vae_bert4rec import B4rVaeBert4Rec
-from aprec.recommenders.filter_seen_recommender import FilterSeenRecommender
+from base.evaluation.metrics.hit import HIT
+from base.evaluation.metrics.map import MAP
+from base.evaluation.metrics.mrr import MRR
+from base.evaluation.metrics.ndcg import NDCG
+from base.evaluation.samplers.pop_sampler import PopTargetItemsSampler
+from base.evaluation.split_actions import LeaveOneOut
+from base.recommenders.bert4recrepro.b4vae_bert4rec import B4rVaeBert4Rec
+from base.recommenders.filter_seen_recommender import FilterSeenRecommender
 
 USERS_FRACTIONS = [1.0]
 

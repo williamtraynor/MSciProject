@@ -1,9 +1,9 @@
 from tqdm import tqdm
-from aprec.api.item import Item
+from base.api.item import Item
 
-from aprec.api.items_ranking_request import ItemsRankingRequest
-from aprec.api.user import User
-from aprec.api.action import Action
+from base.api.items_ranking_request import ItemsRankingRequest
+from base.api.user import User
+from base.api.action import Action
 
 
 class Recommender():

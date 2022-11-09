@@ -4,7 +4,7 @@ class TestLambdaranTime(unittest.TestCase):
    def test_get_lambdas(self):
        import random
        import numpy as np
-       from aprec.losses.lambda_gamma_rank import LambdaGammaRankLoss
+       from base.losses.lambda_gamma_rank import LambdaGammaRankLoss
        import tensorflow as tf
        from tqdm import tqdm
 

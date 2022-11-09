@@ -2,16 +2,23 @@ import os
 import logging
 from ast import literal_eval
 
-from aprec.utils.os_utils import mkdir_p_local, get_dir, console_logging, shell
-from aprec.api.action import Action
-from aprec.api.item import Item
-from aprec.api.lfm_item import LFMItem
-from aprec.api.catalog import Catalog
+from base.utils.os_utils import get_dir, console_logging, shell
+from base.api.action import Action
+from base.api.item import Item
+from base.api.lfm_item import LFMItem
+from base.api.catalog import Catalog
 from datetime import datetime
 
-DATASET_NAME = 'ml-20m'
-MOVIELENS_URL = "http://files.grouplens.org/datasets/movielens/{}.zip".format(DATASET_NAME)
+from base.datasets.download_file import download_file
 
+TRACKS_ID = '1lTjaWJuzWtU1sA03Gc4LpGPEvnUNZ8mg'
+#TRACKS_URL = 'https://drive.google.com/file/d/1lTjaWJuzWtU1sA03Gc4LpGPEvnUNZ8mg/view?usp=share_link'
+TRACKS_URL = 'https://drive.google.com/uc?id=1lTjaWJuzWtU1sA03Gc4LpGPEvnUNZ8mg'
+LE_ID = '1GJEriUD6PMBi_DPqb0hY0Tuu8FQLJr_W'
+#LE_URL = 'https://drive.google.com/file/d/1GJEriUD6PMBi_DPqb0hY0Tuu8FQLJr_W/view?usp=share_link'
+LE_URL = 'https://drive.google.com/uc?id=1GJEriUD6PMBi_DPqb0hY0Tuu8FQLJr_W'
+
+FOLDER_NAME = 'mini_le'
 LFM_DIR = "data/mini_le"
 LFM_DIR_ABSPATH = os.path.join(get_dir(), LFM_DIR)
 
@@ -19,35 +26,10 @@ LISTENING_EVENTS_FILE = os.path.join(LFM_DIR_ABSPATH, 'mini_le.csv')
 TRACKS_FILE = os.path.join(LFM_DIR_ABSPATH, 'mini_tracks.tsv')
 
 # DONT BELIEVE THESE FUNCTIONS ARE REQUIRED
-'''
-def extract_movielens_dataset():
-    if os.path.isfile(RATINGS_FILE):
-        logging.info("movielens dataset is already extracted")
-        return
-    shell("unzip -o {} -d {}".format(MOVIELENS_FILE_ABSPATH, MOVIELENS_DIR_ABSPATH))
-    dataset_dir = os.path.join(MOVIELENS_DIR_ABSPATH, DATASET_NAME)
-    for filename in os.listdir(dataset_dir):
-        shell("mv {} {}".format(os.path.join(dataset_dir, filename), MOVIELENS_DIR_ABSPATH))
-    shell("rm -rf {}".format(dataset_dir))
-
-def prepare_data():
-    download_file(MOVIELENS_URL, MOVIELENS_FILE, MOVIELENS_DIR)
-    extract_movielens_dataset()
-'''
-
-'''
-# This function will only take users with more than 10 listens
-def clean_lfm_data():
-    with open(LISTENING_EVENTS_FILE, 'r') as file:
-        df = pd.read_csv(file, sep='\t')
-        user_counts = df.groupby(by=['user_id']).count()
-        suitable_users = user_counts.loc[user_counts['track_id']>=20].index
-        df = df[suitable_users]
-    return df
-'''
 
 
 def get_lfm_actions():
+    #download_file(LE_URL, 'mini_le.csv')
     with open(LISTENING_EVENTS_FILE, 'r') as data_file:
         header = True
         for line in data_file:
@@ -60,6 +42,7 @@ def get_lfm_actions():
 
 
 def get_tracks_catalog():
+    #download_file(TRACKS_URL, 'mini_tracks.tsv')
     catalog = Catalog()
     with open(TRACKS_FILE, 'r') as data_file:
         header = True
@@ -76,4 +59,3 @@ def get_tracks_catalog():
 
 if __name__ == "__main__":
     console_logging()
-    #prepare_data()

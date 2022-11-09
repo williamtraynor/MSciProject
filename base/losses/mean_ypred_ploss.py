@@ -1,6 +1,6 @@
 import tensorflow as tf
 
-from aprec.losses.loss import Loss
+from base.losses.loss import Loss
 
 #this is a dummy loss function, that does not use y_true
 #It can be useful when the model itself already computes loss 

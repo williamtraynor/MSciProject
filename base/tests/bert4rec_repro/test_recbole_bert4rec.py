@@ -4,11 +4,11 @@ import unittest
 
 class TestRecboleBert4rec(unittest.TestCase):
     def test_sampled_rankings(self):
-        from aprec.api.items_ranking_request import ItemsRankingRequest
-        from aprec.datasets.movielens20m import get_movielens20m_actions
-        from aprec.recommenders.bert4recrepro.recbole_bert4rec import RecboleBERT4RecRecommender
-        from aprec.recommenders.filter_seen_recommender import FilterSeenRecommender
-        from aprec.utils.generator_limit import generator_limit
+        from base.api.items_ranking_request import ItemsRankingRequest
+        from base.datasets.movielens20m import get_movielens20m_actions
+        from base.recommenders.bert4recrepro.recbole_bert4rec import RecboleBERT4RecRecommender
+        from base.recommenders.filter_seen_recommender import FilterSeenRecommender
+        from base.utils.generator_limit import generator_limit
 
         recommender = FilterSeenRecommender(RecboleBERT4RecRecommender(epochs=5, max_sequence_len=10))
         for action in generator_limit(get_movielens20m_actions(), 10000):
@@ -27,10 +27,10 @@ class TestRecboleBert4rec(unittest.TestCase):
                 self.assertGreater(score, float('-inf'))
 
     def test_recbole_bert4rec(self):
-        from aprec.datasets.movielens20m import get_movielens20m_actions, get_movies_catalog
-        from aprec.recommenders.bert4recrepro.recbole_bert4rec import RecboleBERT4RecRecommender
-        from aprec.recommenders.filter_seen_recommender import FilterSeenRecommender
-        from aprec.utils.generator_limit import generator_limit
+        from base.datasets.movielens20m import get_movielens20m_actions, get_movies_catalog
+        from base.recommenders.bert4recrepro.recbole_bert4rec import RecboleBERT4RecRecommender
+        from base.recommenders.filter_seen_recommender import FilterSeenRecommender
+        from base.utils.generator_limit import generator_limit
 
         USER_ID = '120'
         val_users = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']

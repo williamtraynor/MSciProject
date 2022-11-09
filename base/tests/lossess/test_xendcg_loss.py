@@ -1,5 +1,5 @@
 import unittest
-from aprec.losses.xendcg import XENDCGLoss
+from base.losses.xendcg import XENDCGLoss
 
 
 class TestXENDCGLoss(unittest.TestCase):

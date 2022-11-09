@@ -1,10 +1,10 @@
-from aprec.recommenders.top_recommender import TopRecommender
-from aprec.recommenders.lightfm import LightFMRecommender
-from aprec.recommenders.filter_seen_recommender import FilterSeenRecommender
-from aprec.evaluation.samplers.pop_sampler import PopTargetItemsSampler
-from aprec.evaluation.metrics.mrr import MRR
-from aprec.evaluation.metrics.ndcg import NDCG
-from aprec.evaluation.split_actions import LeaveOneOut
+from base.recommenders.top_recommender import TopRecommender
+from base.recommenders.lightfm import LightFMRecommender
+from base.recommenders.filter_seen_recommender import FilterSeenRecommender
+from base.evaluation.samplers.pop_sampler import PopTargetItemsSampler
+from base.evaluation.metrics.mrr import MRR
+from base.evaluation.metrics.ndcg import NDCG
+from base.evaluation.split_actions import LeaveOneOut
 import numpy as np
 
 

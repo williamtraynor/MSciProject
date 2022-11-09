@@ -10,14 +10,14 @@ from collections import defaultdict
 
 import numpy as np
 from tqdm import tqdm
-from aprec import recommenders
+from base import recommenders
 
-from aprec.api.items_ranking_request import ItemsRankingRequest
-from aprec.evaluation.samplers.sampler import TargetItemSampler
-from aprec.utils.os_utils import mkdir_p
-from aprec.evaluation.filter_cold_start import filter_cold_start
-from aprec.evaluation.metrics.sampled_proxy_metric import SampledProxy
-from aprec.evaluation.evaluation_utils import group_by_user
+from base.api.items_ranking_request import ItemsRankingRequest
+from base.evaluation.samplers.sampler import TargetItemSampler
+from base.utils.os_utils import mkdir_p
+from base.evaluation.filter_cold_start import filter_cold_start
+from base.evaluation.metrics.sampled_proxy_metric import SampledProxy
+from base.evaluation.evaluation_utils import group_by_user
 
 def evaluate_recommender(recommender, test_actions,
                          metrics, out_dir, recommender_name,

@@ -1,5 +1,5 @@
-from aprec.evaluation.split_actions import LeaveOneOut
-from aprec.evaluation.configs.rss_paper.common_benchmark_config_bert4rec16h import *
+from base.evaluation.split_actions import LeaveOneOut
+from base.evaluation.configs.rss_paper.common_benchmark_config_bert4rec16h import *
 
 DATASET = "ml-20m_warm5"
 N_VAL_USERS=1024

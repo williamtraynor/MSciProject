@@ -8,11 +8,11 @@ import shlex
 import subprocess
 import tempfile
 from collections import defaultdict
-from aprec.recommenders.BERT4rec.gen_data_fin import create_training_instances, write_instance_to_example_file
-from aprec.recommenders.BERT4rec.vocab import FreqVocab
-from aprec.recommenders.recommender import Recommender
-from aprec.recommenders import BERT4rec
-from aprec.utils.item_id import ItemId
+from base.recommenders.BERT4rec.gen_data_fin import create_training_instances, write_instance_to_example_file
+from base.recommenders.BERT4rec.vocab import FreqVocab
+from base.recommenders.recommender import Recommender
+from base.recommenders import BERT4rec
+from base.utils.item_id import ItemId
 
 
 class VanillaBERT4Rec(Recommender):
