@@ -1,6 +1,9 @@
 data/
 data
+data_hard_copy
+data_hard_copy/
 .idea/
 evaluation/results/*
 *__pycache__/
 *.ipynb_checkpoints/
+*.ipynb
