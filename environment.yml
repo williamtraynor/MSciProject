@@ -1,4 +1,4 @@
-name: project
+name: l1
 channels:
   - defaults
   - conda-forge
@@ -7,6 +7,7 @@ dependencies:
   - setuptools=65.5.0=pyhd8ed1ab_0
   - tzdata=2022e=h191b570_0
   - wheel=0.37.1=pyhd8ed1ab_0
+  - python=3.8.8
   - pip:
     - absl-py
     - astunparse
