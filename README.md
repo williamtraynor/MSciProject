@@ -6,3 +6,6 @@ To create env:
 
 conda config --append channels conda-forge
 
+`cd RecBolePyTorch`
+`pip install -e . --verbose`
+`pip install ray`
