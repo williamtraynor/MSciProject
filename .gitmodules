@@ -1,9 +1,4 @@
-[submodule "RecBole"]
-	path = RecBole
-	url = https://github.com/RUCAIBox/RecBole.git
-[submodule "RecBoleFork"]
-	path = RecBoleFork
-	url = https://github.com/williamtraynor/RecBole.git
+
 [submodule "RecBoleFrk"]
 	path = RecBoleFrk
 	url = https://github.com/williamtraynor/RecBole.git
