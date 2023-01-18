@@ -2,3 +2,9 @@
 [submodule "RecBoleFrk"]
 	path = RecBoleFrk
 	url = https://github.com/williamtraynor/RecBole.git
+[submodule "ProtoMF"]
+	path = ProtoMF
+	url = https://github.com/hcai-mms/ProtoMF.git
+[submodule "ProtoMFFrk"]
+	path = ProtoMFFrk
+	url = https://github.com/williamtraynor/ProtoMF.git
