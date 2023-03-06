@@ -8,3 +8,6 @@
 [submodule "ProtoMFFrk"]
 	path = ProtoMFFrk
 	url = https://github.com/williamtraynor/ProtoMF.git
+[submodule "aprec_repro/aprec"]
+	path = aprec_repro/aprec
+	url = https://github.com/williamtraynor/bert4rec_repro.git
